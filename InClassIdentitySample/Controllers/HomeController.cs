@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using InClassIdentitySample.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace InClassIdentitySample.Controllers
 {
@@ -15,6 +16,7 @@ namespace InClassIdentitySample.Controllers
             return View();
         }
 
+        [Authorize]//ONCE SET UP EASY TO USE FOR A SPECIFIC PERSON ex., [Authorize("Admin")]
         public IActionResult Privacy()
         {
             return View();
